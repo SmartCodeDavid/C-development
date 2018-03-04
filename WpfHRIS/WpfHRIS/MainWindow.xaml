@@ -1,0 +1,82 @@
+﻿<Window x:Class="WpfHRIS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfHRIS"
+        mc:Ignorable="d"
+        Title="Human Resource Information System" Height="571" Width="850">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="99*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="443" Margin="0,98,0,0" VerticalAlignment="Top" Width="842" RenderTransformOrigin="0.5,0.519" Grid.ColumnSpan="2">
+            <TabItem Header="Staff" RenderTransformOrigin="-0.259,3.104">
+                <Grid Background="#FFFFFCFC">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="183*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="label" Content="Filter by name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="49,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.458,-0.144" TextChanged="textBox_TextChanged" Grid.Column="1"/>
+                    <Label x:Name="label2" Content="Show:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="49,42,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox1_SelectionChanged" Grid.Column="1"/>
+                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="294" Margin="10,80,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="listBox_SelectionChanged" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label3" Content="Name:" HorizontalAlignment="Left" Margin="204,10,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label4" Content="Campus:" HorizontalAlignment="Left" Margin="204,37,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label5" Content="Phone:" HorizontalAlignment="Left" Margin="204,62,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label6" Content="Room:" HorizontalAlignment="Left" Margin="204,89,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label7" Content="Email:" HorizontalAlignment="Left" Margin="204,116,0,0" VerticalAlignment="Top" Width="103" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label8" Content="Consultation hours:" HorizontalAlignment="Left" Margin="204,153,0,0" VerticalAlignment="Top" Width="148" Height="27" Grid.Column="1"/>
+                    <Label x:Name="label9" Content="Teaching this semester:" HorizontalAlignment="Left" Margin="204,269,0,0" VerticalAlignment="Top" Width="148" Height="27" Grid.Column="1"/>
+                    <Label x:Name="labelName" Content="" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" Width="285" Height="27" Grid.Column="1"/>
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="138" Margin="557,10,0,0" VerticalAlignment="Top" Width="139" Grid.Column="1"/>
+                    <DataGrid x:Name="dataGrid" Background="White" Margin="177,153,10,37" Visibility="Hidden" Panel.ZIndex="100" Grid.Column="1"/>
+                    <Label x:Name="labelCampus" Content="" HorizontalAlignment="Left" Margin="267,38,0,0" VerticalAlignment="Top" Width="285" Height="27" Grid.Column="1"/>
+                    <Label x:Name="labelPhone" Content="" HorizontalAlignment="Left" Margin="267,62,0,0" VerticalAlignment="Top" Width="285" Height="27" Grid.Column="1"/>
+                    <Label x:Name="labelRoom" Content="" HorizontalAlignment="Left" Margin="267,89,0,0" VerticalAlignment="Top" Width="285" Height="27" Grid.Column="1"/>
+                    <Label x:Name="labelEmail" Content="" HorizontalAlignment="Left" Margin="267,116,0,0" VerticalAlignment="Top" Width="285" Height="27" Grid.Column="1"/>
+                    <Button x:Name="buttonActivityGrid" Content="Activity Grid" HorizontalAlignment="Left" Margin="383,379,0,0" VerticalAlignment="Top" Width="132" Click="buttonActivityGrid_Click" Grid.Column="1"/>
+                    <TextBox x:Name="textBoxConsultation" HorizontalAlignment="Left" Height="79" Margin="204,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" RenderTransformOrigin="0.492,0.478" Grid.Column="1"/>
+                    <TextBox x:Name="textBoxTeachingTime" HorizontalAlignment="Left" Height="79" Margin="204,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="UnitTab" Header="Units" Loaded="UnitTab_Loaded">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="label1" Content="Unit List:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125"/>
+                    <ListBox x:Name="listBoxUnitList" HorizontalAlignment="Left" Height="346" Margin="10,36,0,0" VerticalAlignment="Top" Width="328" SelectionChanged="listBoxUnitList_SelectionChanged"/>
+                    <DataGrid x:Name="dataGridUnit" HorizontalAlignment="Left" Margin="343,36,0,0" VerticalAlignment="Top" Height="322" Width="479"/>
+                    <ComboBox x:Name="comboBoxCampus" HorizontalAlignment="Left" Margin="702,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxCampus_SelectionChanged"/>
+                    <Label x:Name="label10" Content="Campus:" HorizontalAlignment="Left" Margin="636,10,0,0" VerticalAlignment="Top" Width="61"/>
+                    <Button x:Name="buttonClashMap" Visibility="Hidden" Content="Generates ClashMap" HorizontalAlignment="Left" Margin="509,360,0,0" VerticalAlignment="Top" Width="127" Click="buttonClashMap_Click"/>
+                    <DataGrid x:Name="dataGridCrashMap" HorizontalAlignment="Left" Margin="343,36,0,0" VerticalAlignment="Top" Height="322" Width="479" Visibility="Hidden" Loaded="dataGridCrashMap_Loaded"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="HeatMaps">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="781*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="radioButtonUnitClass" Content="Unit Class" HorizontalAlignment="Left" Margin="30,29,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="radioButtonUnitClass_Checked"/>
+                    <RadioButton x:Name="radioButtonConsultation" Content="Consultation Time" HorizontalAlignment="Left" Margin="120,29,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="radioButtonConsultation_Checked"/>
+                    <Label x:Name="label11" Content="Campus:" HorizontalAlignment="Left" Margin="555,24,0,0" VerticalAlignment="Top" Width="79" Grid.Column="1"/>
+                    <ComboBox x:Name="comboBoxHeatMapCampus" HorizontalAlignment="Left" Margin="619,24,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" SelectionChanged="comboBoxHeatMapCampus_SelectionChanged"/>
+                    <RadioButton x:Name="radioButtonAll" Content="All" HorizontalAlignment="Left" Margin="34,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Checked="radioButtonAll_Checked"/>
+                    <DataGrid x:Name="dataGridHeatMap" HorizontalAlignment="Left" Margin="34,73,0,0" VerticalAlignment="Top" Height="306" Width="756" Loaded="dataGridHeatMap_Loaded" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Image x:Name="imageTitle" Source="image\hris-logo-2015.jpg" HorizontalAlignment="Center" Height="120" VerticalAlignment="Top" Width="401" Panel.ZIndex="-100" Margin="0,0,212,0" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.17"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.497"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>
